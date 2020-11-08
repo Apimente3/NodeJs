@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "nodemon app.js"
   },
+  "type":"module",
   "author": "Juan Kaenel",
   "license": "ISC",
   "dependencies": {
