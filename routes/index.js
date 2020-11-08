@@ -8,11 +8,10 @@ router.get('/', (req,res)=>{
 })
 
 router.get('/nosotros', (req,res)=>{
-    res.send('nosotros');
+
+
+    res.render('nosotros');  // view/nosotros.pug
 })
 
-router.get('/contacto', (req,res)=>{
-    res.send('contacto');
-})
 
-export default router;
+export default router;  
