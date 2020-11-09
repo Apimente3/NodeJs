@@ -1,3 +1,30 @@
-h1 hola
-p Desde pug
-p= viajes 
+extends ./layout/index
+
+block contenido
+    main.container.mt-5
+        .row
+            .col-md-5
+                img(src="img/nosotros.jpg", alt="imagen sobre nosotros", class="img-fluid")
+            .col-md-7
+                h1= pagina
+                blockquote  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae erat ut metus tempus dapibus. Vestibulum rutrum neque in ornare fringilla. In hac habitasse platea dictumst. Sed euismod, massa et hendrerit sagittis, nibh lacus blandit ante, in luctus risus nibh vel est. Vestibulum at elit magna. Nullam eu arcu ut massa congue mollis. Nunc et enim id nunc facilisis vehicula.
+
+                p a sem scelerisque, ornare tellus vitae, dictum turpis. Suspendisse eget eros sed lacus convallis maximus. Curabitur nec erat mattis, commodo urna sit amet, malesuada sem. Vivamus in pretium augue, vel suscipit enim. Curabitur orci lacus, sollicitudin in faucibus ac, mattis a mauris. Sed eu pretium sem. Nam porttitor blandit lectus, sit amet volutpat lacus facilisis et. Nunc venenatis porta sapien. Curabitur quis tortor sollicitudin, ullamcorper ipsum sit amet, sollicitudin mauris. Cras tincidunt elit quis mi pharetra viverra vel a mauris. 
+
+                p ipsum arcu, mattis rutrum odio in, facilisis fringilla tellus. Vivamus tempus nec ante non pulvinar. Quisque ut nulla dictum justo molestie dignissim id ut nibh. Donec orci nisl, luctus eget ante ut, vestibulum posuere lorem. Nunc et ligula egestas, semper neque sed, molestie enim. Nulla iaculis nunc risus, quis pulvinar tellus sagittis sed.  
+    
+    .listado-iconos
+        .container.mt-5.py-5.text-center
+            .row
+                .col-md-4
+                    img(src="img/icono_seguridad.svg",alt="icono seguridad", class="img-fluid mb-4")
+                    h2.mb-4 Seguridad
+                    p Donec orci nisl, luctus eget ante ut, vestibulum posuere lorem. Nunc et ligula egestas, semper neque sed, molestie enim. Nulla iaculis nunc risus, quis pulvinar tellus sagittis sed.
+                .col-md-4
+                    img(src="img/icono_destinos.svg",alt="icono destinos", class="img-fluid mb-4")
+                    h2.mb-4 Destinos
+                    p Donec orci nisl, luctus eget ante ut, vestibulum posuere lorem. Nunc et ligula egestas, semper neque sed, molestie enim. Nulla iaculis nunc risus, quis pulvinar tellus sagittis sed.
+                .col-md-4
+                    img(src="img/icono_precios.svg",alt="icono precios", class="img-fluid mb-4")
+                    h2.mb-4 Los mejores precios
+                    p Donec orci nisl, luctus eget ante ut, vestibulum posuere lorem. Nunc et ligula egestas, semper neque sed, molestie enim. Nulla iaculis nunc risus, quis pulvinar tellus sagittis sed.
