@@ -1,7 +1,15 @@
 /* const express = require('express'); */
 import express from 'express';
 import router from './routes/index.js'
+import db from './config/db.js';
+
 const app = express();
+
+// Conectar bd}
+db.authenticate()
+    .then(() => console.log('bd conectada'))
+    .catch( error => console.log(error));
+
 
 const port = process.env.PORT || 3000;
 
