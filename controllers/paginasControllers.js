@@ -1,3 +1,6 @@
+// Importo el modelo viajes
+import { Viaje } from '../models/Viaje.js'
+
 const paginaInicio = (req, res) => {
     res.render('inicio', {
         pagina: 'Inicio',
@@ -16,9 +19,15 @@ const paginaTestimoniales = (req, res) => {
     })
 };
 
-const paginaViajes = (req, res) => {
+const paginaViajes = async (req, res) => {
+    // Consulto BD
+    const viajes = await Viaje.findAll();
+    // console.log(viajes); // viene a ser un array donde se encuentran todos los viajes consultados en la bd
+
+
     res.render('viajes', {
-        pagina: 'Viajes',
+        pagina: 'Próximos Viajes',
+        viajes, // envío los viajes de la consulta a la vista
     })
 };
 

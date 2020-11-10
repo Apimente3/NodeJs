@@ -15,7 +15,6 @@ router.get('/', paginaInicio);
 
 router.get('/nosotros', paginaNosotros);  // view/nosotros.pug
 
-
 router.get('/testimoniales', paginaTestimoniales); // view/testimoniales.pug
 
 router.get('/viajes', paginaViajes);

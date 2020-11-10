@@ -1,5 +1,5 @@
 import Sequelize from 'sequelize';
-import db from './config/db.js';
+import db from '../config/db.js';
 
 export const Viaje = db.define('viajes',{ // Creamos el modelo viaje a partir de la tabla viajes y definimos los tipos de datos con sequalize
     titulo: {
