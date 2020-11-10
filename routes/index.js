@@ -1,5 +1,5 @@
 import express from 'express';
-import { paginaInicio, paginaNosotros, paginaTestimoniales, paginaViajes } from '../controllers/paginasControllers.js'
+import { paginaInicio, paginaNosotros, paginaTestimoniales, paginaViajes, paginaDetalleViaje } from '../controllers/paginasControllers.js'
 
 const router = express.Router();
 
@@ -18,6 +18,8 @@ router.get('/nosotros', paginaNosotros);  // view/nosotros.pug
 router.get('/testimoniales', paginaTestimoniales); // view/testimoniales.pug
 
 router.get('/viajes', paginaViajes);
+
+router.get('/viajes/:slug', paginaDetalleViaje);
 
 
 export default router;  
