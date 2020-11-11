@@ -10,7 +10,6 @@ db.authenticate()
     .then(() => console.log('bd conectada'))
     .catch( error => console.log(error));
 
-
 const port = process.env.PORT || 3000;
 
 // Habilitar pug
@@ -24,7 +23,9 @@ app.use( (req,res,next) =>{
     next(); // pasame al otro middleware
 })
 
-//Definir carpeta pública
+// Agregar body parser
+app.use(express.urlencoded({extended:true}));    
+// Definir carpeta pública
 app.use(express.static('public'));
 
 // Agregar router

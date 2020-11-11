@@ -1,5 +1,17 @@
 import express from 'express';
-import { paginaInicio, paginaNosotros, paginaTestimoniales, paginaViajes, paginaDetalleViaje } from '../controllers/paginasControllers.js'
+// Importamos controladores
+import { 
+    paginaInicio, 
+    paginaNosotros, 
+    paginaTestimoniales, 
+    paginaViajes, 
+    paginaDetalleViaje 
+} from '../controllers/paginasControllers.js';
+
+import {
+    guardarTestimonial
+} from '../controllers/testimonialController.js';
+
 
 const router = express.Router();
 
@@ -10,13 +22,17 @@ const router = express.Router();
     });  
 }) */
 
-// Acomodo la lógica en los controladores 
+/* INICIO */
 router.get('/', paginaInicio);
 
+/* NOSOTROS */
 router.get('/nosotros', paginaNosotros);  // view/nosotros.pug
 
+/* TESTIMONIALES */
 router.get('/testimoniales', paginaTestimoniales); // view/testimoniales.pug
+router.post('/testimoniales', guardarTestimonial);
 
+/* VIAJES */
 router.get('/viajes', paginaViajes);
 
 router.get('/viajes/:slug', paginaDetalleViaje);
