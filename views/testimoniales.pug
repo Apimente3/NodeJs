@@ -2,6 +2,19 @@ extends ./layout/index
 
 block contenido
     h1.text-center.mt-5 #{pagina}
+    
+    blockquote.text-center Lee sobre nuestros clientes y experiencias 
+    .row.testimoniales
+        each testimonial in testimoniales
+            .col-md-6.col-lg-4.mb-4
+                    .card.ml-2.mr-2
+                        .card-body
+                            blockquote.blockquote
+                            p.mb-0
+                                | #{testimonial.mensaje}
+                            footer.blockquote-footer
+                                | #{testimonial.nombre}
+
     .row
         .col-md-12
             h2.d-block.w-100.text-center Agrega un Testimonial

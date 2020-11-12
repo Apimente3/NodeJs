@@ -1,5 +1,6 @@
-// Importo el modelo viajes
+// Importo los modelos
 import { Viaje } from '../models/Viaje.js'
+import { Testimonial } from '../models/Testiominales.js'
 
 /* CONTROLADOR INICIO  */
 const paginaInicio = (req, res) => {
@@ -16,10 +17,16 @@ const paginaNosotros = (req, res) => {
 };
 
 /* CONTROLADOR TESTIMONIALES */
-const paginaTestimoniales = (req, res) => {
-    res.render('testimoniales', {
-        pagina: 'Testimoniales',
-    })
+const paginaTestimoniales = async (req, res) => {
+    try {
+        const testimoniales = await Testimonial.findAll(); // Capturo los testimoniales de la bd
+        res.render('testimoniales',{
+            pagina:'Testimoniales',
+            testimoniales // envío los testimoniales a la vista en forma de arreglos, gracias a findAll
+        })
+    } catch (error) {
+        console.log(error);
+    }
 };
 
 /* CONTROLADOR VIAJES */
