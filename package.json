@@ -4,7 +4,8 @@
   "description": "agencia de viajes con node.js",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "start": "node app.js"
   },
   "type": "module",
   "author": "Juan Kaenel",
