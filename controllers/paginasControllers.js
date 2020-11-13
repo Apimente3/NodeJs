@@ -3,10 +3,18 @@ import { Viaje } from '../models/Viaje.js'
 import { Testimonial } from '../models/Testiominales.js'
 
 /* CONTROLADOR INICIO  */
-const paginaInicio = (req, res) => {
-    res.render('inicio', {
-        pagina: 'Inicio',
-    })
+const paginaInicio = async (req, res) => {
+    try {
+        // Consultar 3 viajes del modelo viaje
+        const viajes = await Viaje.findAll({ limit: 3});
+        res.render('inicio', {
+            pagina: 'Inicio',
+            clase: 'home', // le paso una clase css al layout index.pug que lo colocará en el body
+            viajes,
+        })   
+    } catch (error) {
+        console.log(error);
+    }
 };
 
 /* CONTROLADOR NOSOTROS */
