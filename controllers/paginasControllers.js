@@ -4,13 +4,24 @@ import { Testimonial } from '../models/Testiominales.js'
 
 /* CONTROLADOR INICIO  */
 const paginaInicio = async (req, res) => {
+    // Creo una promesa donde de la bd en forma de array para poder realizar dos  consultas de una y no tener dos await por separado
+    const promiseDB = [];
+    promiseDB.push( Viaje.findAll({ limit: 3}) );
+    promiseDB.push( Testimonial.findAll({ limit: 3}) );
+
     try {
-        // Consultar 3 viajes del modelo viaje
+        /* Consultar 3 viajes del modelo viaje
         const viajes = await Viaje.findAll({ limit: 3});
+        Consulto 3 testimonial
+        const testimoniales_inicio = await Testimonial.findAll({ limit: 3}); */
+        // En lugar de dos peticiones await meto dos peticiones en un array, promiseDB que será un promise
+        const resultado = await Promise.all( promiseDB );
+        
         res.render('inicio', {
             pagina: 'Inicio',
             clase: 'home', // le paso una clase css al layout index.pug que lo colocará en el body
-            viajes,
+            viajes: resultado[0],
+            testimoniales: resultado[1],
         })   
     } catch (error) {
         console.log(error);

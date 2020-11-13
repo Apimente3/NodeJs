@@ -129,6 +129,10 @@ footer .nav a,
     font-family: 'Staatliches', cursive;
     line-height: .8;
 }
+.descuento h3{
+    color: #15B9D5;
+}
+
 .descuento .titulo {
     font-size: 2.4rem;
 }
@@ -146,7 +150,7 @@ i {
 }
 
 .testimoniales p{
-    font-size: .8rem;
+    font-size: 1rem;
     font-weight: normal;
 }
 .testimoniales p::before {
